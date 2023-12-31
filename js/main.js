@@ -1,21 +1,4 @@
 /**
- * 헤더의 검색 부분 클릭 시 변환 코드
- */
-const searchEl = document.querySelector(".search");
-const searchInputEl = searchEl.querySelector("input");
-searchEl.addEventListener("click", () => {
-  searchInputEl.focus();
-});
-searchInputEl.addEventListener("focus", () => {
-  searchEl.classList.add("focused");
-  searchInputEl.setAttribute("placeholder", "통합검색");
-});
-searchInputEl.addEventListener("blur", () => {
-  searchEl.classList.remove("focused");
-  searchInputEl.setAttribute("placeholder", "");
-});
-
-/**
  * 헤더의 배지 부분을 특정 스크롤 이상 지나면 사라지는 코드
  * _.throttle(함수, 시간)
  */
@@ -144,7 +127,3 @@ spyEls.forEach((spyEl) => {
     .setClassToggle(spyEl, "show")
     .addTo(new ScrollMagic.Controller());
 });
-
-// 날짜 계산
-const thisYear = document.querySelector(".this-year");
-thisYear.textContent = new Date().getFullYear();
